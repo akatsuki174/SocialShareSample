@@ -1,0 +1,2 @@
+# SocialShareSample
+Facebook SDKを使ってFacebookシェアのサンプルアプリを作る
