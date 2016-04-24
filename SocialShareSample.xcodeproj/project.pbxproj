@@ -12,6 +12,8 @@
 		2CE6E9521CCCAF8F0046F025 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE6E9501CCCAF8F0046F025 /* Main.storyboard */; };
 		2CE6E9541CCCAF8F0046F025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE6E9531CCCAF8F0046F025 /* Assets.xcassets */; };
 		2CE6E9571CCCAF8F0046F025 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE6E9551CCCAF8F0046F025 /* LaunchScreen.storyboard */; };
+		2CE6E9641CCCB1090046F025 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE6E9621CCCB1090046F025 /* FBSDKCoreKit.framework */; };
+		2CE6E9651CCCB1090046F025 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE6E9631CCCB1090046F025 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		2CE6E9531CCCAF8F0046F025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CE6E9561CCCAF8F0046F025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CE6E9581CCCAF8F0046F025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CE6E9621CCCB1090046F025 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		2CE6E9631CCCB1090046F025 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CE6E9651CCCB1090046F025 /* FBSDKShareKit.framework in Frameworks */,
+				2CE6E9641CCCB1090046F025 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +60,7 @@
 		2CE6E94B1CCCAF8F0046F025 /* SocialShareSample */ = {
 			isa = PBXGroup;
 			children = (
+				2CE6E9611CCCB0DD0046F025 /* Frameworks */,
 				2CE6E94C1CCCAF8F0046F025 /* AppDelegate.swift */,
 				2CE6E94E1CCCAF8F0046F025 /* ViewController.swift */,
 				2CE6E9501CCCAF8F0046F025 /* Main.storyboard */,
@@ -62,6 +69,15 @@
 				2CE6E9581CCCAF8F0046F025 /* Info.plist */,
 			);
 			path = SocialShareSample;
+			sourceTree = "<group>";
+		};
+		2CE6E9611CCCB0DD0046F025 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2CE6E9621CCCB1090046F025 /* FBSDKCoreKit.framework */,
+				2CE6E9631CCCB1090046F025 /* FBSDKShareKit.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +266,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SocialShareSample/Frameworks",
+				);
 				INFOPLIST_FILE = SocialShareSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.akatsuki174.SocialShareSample;
@@ -261,6 +281,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SocialShareSample/Frameworks",
+				);
 				INFOPLIST_FILE = SocialShareSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.akatsuki174.SocialShareSample;
@@ -287,6 +311,7 @@
 				2CE6E95D1CCCAF8F0046F025 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
