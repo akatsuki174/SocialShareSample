@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKShareKit
 
 class ViewController: UIViewController {
     private let button = UIButton()
@@ -31,7 +32,19 @@ class ViewController: UIViewController {
     }
 
     func tappedButton(sender: UIButton) {
-        
+        let url:NSURL = NSURL(string:"https://www.google.co.jp")!
+        let dialog = FBSDKShareDialog()
+        dialog.shareContent = self.getShareLinkContent(url)
+        dialog.mode = FBSDKShareDialogMode.Native
+        if dialog.canShow() {
+            FBSDKShareDialog.showFromViewController(self, withContent: self.getShareLinkContent(url), delegate: nil)
+        }
+    }
+    
+    private func getShareLinkContent(objectURL: NSURL) -> FBSDKSharingContent {
+        let content = FBSDKShareLinkContent()
+        content.contentURL = objectURL
+        return content
     }
 }
 
