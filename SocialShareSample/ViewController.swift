@@ -38,6 +38,8 @@ class ViewController: UIViewController {
         dialog.mode = FBSDKShareDialogMode.Native
         if dialog.canShow() {
             FBSDKShareDialog.showFromViewController(self, withContent: self.getShareLinkContent(url), delegate: nil)
+        } else {
+            self.showNotFoundFacebookAccountAlert()
         }
     }
     
@@ -45,6 +47,26 @@ class ViewController: UIViewController {
         let content = FBSDKShareLinkContent()
         content.contentURL = objectURL
         return content
+    }
+    
+    private func showNotFoundFacebookAccountAlert() {
+        let title = "Facebookアカウントが\nありません"
+        let message = "Facebookアカウントが\n登録されていません。\n設定アプリから作成、追加ができます。"
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "設定する", style: .Default, handler: { action in
+            self.moveToFacebookSettings()
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    private func moveToFacebookSettings() {
+        dispatch_async(dispatch_get_main_queue(), {
+            let url = NSURL(string: "prefs:root=FACEBOOK")
+            if UIApplication.sharedApplication().canOpenURL(url!) {
+                UIApplication.sharedApplication().openURL(url!)
+            }
+        })
     }
 }
 
