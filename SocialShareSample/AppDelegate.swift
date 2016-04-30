@@ -44,14 +44,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    @available(iOS, introduced=8.0, deprecated=9.0)
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
     
-    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool
+    @available(iOS 9.0, *)
+    func application(application: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool
     {
         let sourceApplication: String? = options[UIApplicationOpenURLOptionsSourceApplicationKey] as? String
-        return FBSDKApplicationDelegate.sharedInstance().application(app, openURL: url, sourceApplication: sourceApplication, annotation: nil)
+        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: nil)
     }
 }
 
