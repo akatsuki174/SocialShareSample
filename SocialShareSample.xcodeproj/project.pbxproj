@@ -271,6 +271,7 @@
 					"$(PROJECT_DIR)/SocialShareSample/Frameworks",
 				);
 				INFOPLIST_FILE = SocialShareSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.akatsuki174.SocialShareSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -286,6 +287,7 @@
 					"$(PROJECT_DIR)/SocialShareSample/Frameworks",
 				);
 				INFOPLIST_FILE = SocialShareSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.akatsuki174.SocialShareSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
